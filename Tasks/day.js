@@ -1,21 +1,21 @@
 // Get day number
 
 
-// step 1
-// identation, spacing, 'use strict', const, renaming variables
+// step 2
+// use for...of loop
 
 'use strict';
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const getDayNumber = (inputString) => {
-  let i;
-  for (i = 0; i < daysOfWeek.length; i++) {
-    if (inputString.startsWith(daysOfWeek[i].toLowerCase())) {
-      return i + 1;
+  for (const [index, day] of daysOfWeek.entries()) {
+    if (inputString.startsWith(day.toLowerCase())) {
+      return index + 1;
     }
   }
   return -1;
 };
 
 module.exports = getDayNumber;
+

@@ -1,11 +1,11 @@
 // Find an intersection of two dictionaries
 
-// step 1
-// 'use strict', remove empty blocks, const, rename variables
+// step 2
+// add variable intersection, use arrow function
 
 'use strict';
 
-const findIntersection = function intersection(dictionary1, dictionary2) {
+const findIntersection = (dictionary1, dictionary2) => {
   const keysDictionary1 = Object.keys(dictionary1);
 
   for (const key of keysDictionary1) {
@@ -16,7 +16,8 @@ const findIntersection = function intersection(dictionary1, dictionary2) {
     }
   }
 
-  return dictionary1;
+  const intersection = dictionary1;
+  return intersection;
 };
 
 module.exports = findIntersection;

@@ -1,7 +1,7 @@
 // Extract substring between prefix and suffix
 
-// step 2
-// change identifier case, prefer arrow functions, remove senseless else
+// step 3
+// const where possible (forgot to add to step 2), add variable substring
 
 'use strict';
 
@@ -18,7 +18,9 @@ const getValueBetween = (inputString, prefix, suffix) => {
     inputString = inputString.substring(0, i);
   }
 
-  return inputString;
+  const substring = inputString;
+
+  return substring;
 };
 
 module.exports = getValueBetween;

@@ -1,25 +1,23 @@
 // Extract substring between prefix and suffix
 
-// step 1
-// identation, spacing, 'use strict', renaming variables
+// step 2
+// change identifier case, prefer arrow functions, remove senseless else
 
 'use strict';
 
-let getValueBetween = (inputString, prefix, suffix) => {
-  let i = inputString.indexOf(prefix);
+const getValueBetween = (inputString, prefix, suffix) => {
+  const i = inputString.indexOf(prefix);
   if (i === -1) return '';
-  else {
-    let k = i + prefix.length;
-    inputString = inputString.substring(k);
-    if (suffix) {
-      i = inputString.indexOf(suffix);
-      if (i === -1) {
-        return '';
-      } else {
-        inputString = inputString.substring(0, i);
-      }
-    }
+  
+  let k = i + prefix.length;
+  inputString = inputString.substring(k);
+  
+  if (suffix) {
+    const i = inputString.indexOf(suffix);
+    if (i === -1) return '';
+    inputString = inputString.substring(0, i);
   }
+
   return inputString;
 };
 

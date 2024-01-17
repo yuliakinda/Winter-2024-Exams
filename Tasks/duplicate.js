@@ -1,13 +1,13 @@
 // Return an array without duplicates
 
-// step 2
-// simplify condition, use Array.fill for array initialization
+// step 3
+// intuitive naming
 
 'use strict';
 
-const duplicate = (value, N) => {
-  if (N <= 0) return [];
-  return Array(N).fill(value);
+const createArrayWithoutDuplicates = (value, length) => {
+  if (length <= 0) return [];
+  return Array(length).fill(value);
 };
 
-module.exports = duplicate;
+module.exports = createArrayWithoutDuplicates;

@@ -1,18 +1,20 @@
 // Increment all numbers in dictionary
 
-// step 2
-// simplify checking if the value is a number
+// step 3
+// implementation without changing incoming args
 
 'use strict';
 
 const incrementNumbers = (dictionary) => {
-  for (const key in dictionary) {
-    if (typeof dictionary[key] === 'number') {
-      dictionary[key] = dictionary[key] + 1;
+  const incrementedDictionary = { ...dictionary };
+
+  for (const [key, value] of Object.entries(incrementedDictionary)) {
+    if (typeof value === 'number') {
+      incrementedDictionary[key] = value + 1;
     }
   }
 
-  return dictionary;
+  return incrementedDictionary;
 };
 
 module.exports = incrementNumbers;

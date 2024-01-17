@@ -1,20 +1,20 @@
 // Copy all values from dict except listed
 
-// step 2
-// replace forEach with for...of
+// step 3
+// no changing incoming args, implementation without delete
 
 'use strict';
 
 const except = (incomingValuesArray, ...keysToRemove) => {
-  const keysToKeep = Object.keys(incomingValuesArray);
+  const filteredValues = {};
 
-  for (const key of keysToKeep) {
-    if (keysToRemove.includes(key)) {
-      delete incomingValuesArray[key];
+  for (const [key, value] of Object.entries(incomingValuesArray)) {
+    if (!keysToRemove.includes(key)) {
+      filteredValues[key] = value;
     }
   }
 
-  return incomingValuesArray;
+  return filteredValues;
 };
 
 module.exports = except;

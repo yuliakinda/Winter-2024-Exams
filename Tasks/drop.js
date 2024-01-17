@@ -1,20 +1,19 @@
 // Delete listed keys from dictionary
 
-// step 2
-// remove unneeded parts, replace forEach with for...of
+// step 3
+// implement without delete
 
 'use strict';
 
 const drop = (dictionary, ...keysToRemove) => {
-  const keys = Object.keys(dictionary);
+  const filteredDictionary = Object.keys(dictionary)
+    .filter(key => !keysToRemove.includes(key))
+    .reduce((result, key) => {
+      result[key] = dictionary[key];
+      return result;
+    }, {});
 
-  for (const key of keys) {
-    if (keysToRemove.includes(key)) {
-      delete dictionary[key];
-    }
-  }
-
-  return dictionary;
+  return filteredDictionary;
 };
 
 module.exports = drop;
